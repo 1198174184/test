@@ -1,0 +1,227 @@
+// Fonts
+//@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://use.fontawesome.com/releases/v5.0.10/css/all.css);
+// Variables
+@import "variables";
+// Bootstrap
+@import "element-ui/lib/theme-chalk/index.css";
+@import "bootstrap/scss/bootstrap.scss";
+
+html, body, #app {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background: #f3f3f4;
+  overflow: hidden;
+}
+
+body {
+  color: map-get($font-colors, "primary");
+}
+
+a {
+  color: map-get($font-colors, "primary");
+
+  &:hover, &:focus, &:visited {
+    color: map-get($font-colors, "primary");
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e7eaec !important;
+}
+
+.main-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.body-container {
+  height: 100%;
+  overflow: auto;
+  transition: all .3s ease;
+}
+
+.sidebar-container {
+  @include float-left;
+  width: 12.5rem;
+  height: 100%;
+  overflow: auto;
+}
+
+/**
+ * Border shadow
+ */
+
+.border-shadow-bottom {
+  box-shadow: 0 2px 1px 1px hsla(0, 0%, 39%, .1)
+}
+
+.img-container {
+  margin-top: 10px;
+}
+
+/**
+ * Layout - Sidebar
+ */
+.sidebar-container {
+  height: 100%;
+  background-color: #2f4050;
+
+  .menu-sidebar {
+    background: transparent;
+    .el-menu {
+      background: transparent;
+    }
+    border: none;
+    i {
+      color: #ffffff;
+    }
+    .el-menu-item, .el-submenu__title {
+      color: $font-color-second;
+      i {
+        color: $font-color-second;
+      }
+      &:hover, &:focus {
+        background-color: #293846;
+        color: $white;
+        i {
+          color: $white;
+        }
+      }
+    }
+    .is-active {
+      color: $white;
+      background-color: #293846;
+      border-left: 4px solid #19aa8d;
+      .el-submenu__title, i {
+        color: $white;
+      }
+    }
+    .el-submenu {
+      .is-active {
+        border: none;
+      }
+    }
+  }
+
+  .logo-container {
+    background: url('./assets/images/logo-bg.png');
+    height: 72px;
+    min-width: 199px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/**
+ * Layout - Header
+ */
+.main-header-container {
+
+  .navbar {
+    .toggle-button {
+      font-size: 2rem;
+      padding: 0;
+      color: $font-color-primary;
+      &:focus {
+        border: none;
+      }
+    }
+
+    .el-dropdown-link {
+      cursor: pointer;
+    }
+    .user-avator {
+      width: 30px;
+    }
+  }
+  .breadcrumb {
+    font-size: 0.85rem;
+    background-color: transparent;
+
+  }
+  .breadcrumb-item + .breadcrumb-item::before {
+    font-size: 0.5rem;
+  }
+  .breadcrumb-item.active {
+    color: inherit;
+  }
+
+  .header-title-container {
+    background-color: #ffffff;
+  }
+}
+
+/**
+ * Override Element UI
+ */
+.el-button--primary {
+  background-color: $primary;
+  border-color: $primary;
+  &:hover, &:focus {
+    background-color: #18a689;
+    border-color: #18a689;
+    color: #FFFFFF;
+  }
+}
+
+.el-button--secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+}
+
+button:focus {
+  outline: none;
+}
+
+.card-primary {
+  @extend .card;
+  border-radius: 0;
+  border-top: none;
+  color: $font-color-primary;
+
+  .el-card__header {
+    @extend .card-header;
+    background-color: #fff;
+    border-top: #d2d2d2 2px solid;
+
+    &:first-child {
+      border-radius: 0 !important;
+    }
+    .card-title{
+      font-weight: bold;
+    }
+  }
+
+  .el-card__body {
+    @extend .card-body;
+  }
+}
+
+.el-dropdown-menu{
+  border: medium none;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(86, 96, 117, 0.7);
+  padding: 0;
+
+  .el-dropdown-menu__item{
+    color: $font-color-primary;
+    margin: 4px;
+    padding: 0px 1rem;
+
+    &:hover{
+      background-color: #f5f5f5;
+      color: #262626;
+    }
+  }
+}
+.el-popper .popper__arrow{
+  -webkit-filter: drop-shadow(0 2px 12px rgba(0, 0, 0, .5));
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, .5));
+}
